@@ -1,0 +1,20 @@
+<!--pages/auth/account-login/account-login.wxml-->
+<view class="container">
+  <view class="form-wrapper">
+    <view class="form-item">
+      <input class="phone" type="number" value="{{phone}}" bindinput="bindPhoneInput" placeholder="手机号码" />
+      <text wx:if="{{ phone.length > 0 }}" id="clear-phone" class="clear" bindtap="clearInput">✕</text>
+    </view>
+
+    <view class="form-item">
+      <input class="password" value="{{password}}" password bindinput="bindPasswordInput" placeholder="密码" />
+      <text wx:if="{{ password.length > 0 }}" class="clear" id="clear-password" bindtap="clearInput">✕</text>
+    </view>
+    <button type="primary" class="login-btn" bindtap="accountLogin">登录</button>
+
+    <view class="form-item-text">
+      <navigator url="/pages/auth/register/register" class="register">注册账号</navigator>
+      <navigator url="/pages/auth/reset/reset" class="reset">忘记密码</navigator>
+    </view>
+  </view>
+</view>

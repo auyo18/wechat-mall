@@ -1,0 +1,4 @@
+<!--pages/auth/register/register.wxml-->
+<form phone="{{phone}}" password="{{password}}" confirmPassword="{{confirmPassword}}" bindphoneInput="bindPhoneInput" bindpasswordInput="bindPasswordInput" bindconfirmPasswordInput="bindConfirmPasswordInput" bindclearInput="clearInput">
+  <button type="primary" class="register-btn" bindtap="startRegister">注册</button>
+</form>

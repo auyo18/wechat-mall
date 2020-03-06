@@ -1,0 +1,31 @@
+<!--compontents/form/form.wxml-->
+<view class="container">
+  <view class="form-wrapper">
+
+    <view class="form-item">
+      <input class="mobile" type="number" value="{{phone}}" bindinput="bindPhoneInput" placeholder="手机号" />
+      <text wx:if="{{ phone.length > 0 }}" id="clear-phone" class="clear" bindtap="clearInput">✕</text>
+    </view>
+
+    <view class="form-item">
+      <input class="password" value="{{password}}" password bindinput="bindPasswordInput" placeholder="密码" />
+      <text wx:if="{{ password.length > 0 }}" id="clear-password" class="clear" bindtap="clearInput">✕</text>
+    </view>
+
+    <view class="form-item">
+      <input class="password" value="{{confirmPassword}}" password bindinput="bindConfirmPasswordInput" placeholder="确认密码" />
+      <text wx:if="{{ confirmPassword.length > 0 }}" id="clear-confirm-password" class="clear" bindtap="clearInput">✕</text>
+    </view>
+
+    <view class="form-item-code">
+      <view class="form-item code-item">
+        <input class="code" placeholder="验证码" />
+      </view>
+      <view>
+        <button class="code-btn" bindtap="sendCode">获取验证码</button>
+      </view>
+    </view>
+    <slot />
+    
+  </view>
+</view>

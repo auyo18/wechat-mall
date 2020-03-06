@@ -1,0 +1,43 @@
+/* pages/user/login/login.wxss */
+
+.container {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.phone-login {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 300rpx;
+}
+
+.phone-login text {
+  margin: 20rpx 0;
+}
+
+.phone-login .logo {
+  font-size: 60rpx;
+}
+
+.phone-login .login-button {
+  margin-top: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-login .login-button image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 100rpx;
+  width: 100%;
+  display: flex;
+}

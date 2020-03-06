@@ -1,0 +1,18 @@
+<!--pages/user/index/index.wxml-->
+<view class="container">
+  <view class="info-wrapper" bindtap="goLogin">
+    <image class="avatar" src="{{userInfo.avatar||'/static/images/avatar.png'}}" />
+    <view class="info">
+      <text class="name">{{userInfo.nickname}}</text>
+    </view>
+  </view>
+
+  <view class="panel">
+    <view class="item" wx:for="{{menus}}" wx:key="name" bindtap="goMenu" data-url="{{item.url}}">
+      <image class="icon" src="{{item.icon}}" />
+      <text class="name">{{item.name}}</text>
+    </view>
+  </view>
+
+  <view class="logout" wx:if="{{hasLogin}}" bindtap="exitLogin">退出登录</view>
+</view>

@@ -1,0 +1,4 @@
+<!--pages/auth/reset/reset.wxml-->
+<form phone="{{phone}}" password="{{password}}" confirmPassword="{{confirmPassword}}" bindphoneInput="bindPhoneInput" bindpasswordInput="bindPasswordInput" bindconfirmPasswordInput="bindConfirmPasswordInput" bindclearInput="clearInput">
+  <button type="primary" class="register-btn" bindtap="startReset">密码重置</button>
+</form>

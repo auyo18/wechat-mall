@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "账号注册",
+  "usingComponents": {
+    "form": "/compontents/form/form"
+  }
+}

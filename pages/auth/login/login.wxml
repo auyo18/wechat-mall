@@ -1,0 +1,16 @@
+<!--pages/user/login/login.wxml-->
+<view class="container">
+  <view class="phone-login">
+    <text class="logo">聚力严选</text>
+    <text>聚力自营 · 精品生活家居品牌</text>
+    <button class="login-button" style="width:80vw" type="primary" open-type="getPhoneNumber" bindgetphonenumber="onGotPhoneNumber">
+      <image src="../../../static/images/wechat_white.png"></image>
+      手机号一键登录
+    </button>
+    <text style="color:#aaa">未注册手机号自动注册登录</text>
+  </view>
+  <view class="bottom">
+    <button open-type="getUserInfo" bindgetuserinfo="onWxLogin">微信登录</button>
+    <button bindtap="accountLogin">账号登录</button>
+  </view>
+</view>

@@ -1,0 +1,51 @@
+/* compontents/form/form.wxss */
+.form-wrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 0 40rpx;
+  margin-top: 200rpx;
+  background: #fff;
+}
+
+.form-wrapper .form-item {
+  position: relative;
+  margin: 20rpx 0;
+}
+
+.form-wrapper .form-item input {
+  position: relative;
+  background: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-right: 60rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.form-wrapper .form-item .clear {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 20rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #aaa;
+  z-index: 2;
+}
+
+.form-wrapper .form-item-code {
+  display: flex;
+  align-items: center;
+}
+
+.form-wrapper .form-item-code .code-item {
+  flex: 1;
+}
+
+.form-wrapper .code-btn {
+  width: 250rpx;
+}
+
+.form-wrapper .register-btn {
+  margin-top: 100rpx;
+}

@@ -1,0 +1,48 @@
+/* pages/auth/account-login/account-login.wxss */
+
+.form-wrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 0 40rpx;
+  margin-top: 200rpx;
+  background: #fff;
+}
+
+.form-wrapper .form-item {
+  position: relative;
+}
+
+.form-wrapper .form-item input {
+  position: relative;
+  background: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-right: 60rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.form-wrapper .form-item .clear {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 20rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #aaa;
+  z-index: 2;
+}
+
+.form-wrapper .login-btn {
+  margin-top: 60rpx;
+}
+
+.form-wrapper .form-item-text {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+
+.form-wrapper .form-item-text navigator {
+  padding: 20rpx 0;
+}

@@ -1,0 +1,39 @@
+<!--pages/home/home.wxml-->
+<view class="container">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" circular="true">
+    <block wx:for="{{banners}}" wx:key="_id">
+      <swiper-item class="swiper-item">
+        <image mode="aspectFill" src="{{item}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="module menus">
+    <view class="item" wx:for="{{menus}}" wx:key="name">
+      <image src="{{item.icon}}" />
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+  <view class="module sale-rank-wrapper">
+    <text class="title">类目热销榜</text>
+    <view class="sale-rank">
+      <view class="item" wx:for="{{saleRank}}" wx:key="name">
+        <text class="name">{{item.name}}</text>
+        <image src="{{item.icon}}" />
+      </view>
+    </view>
+  </view>
+  <view class="module">
+    <text class="title">新品首发</text>
+    <view class="new-item">
+      <view class="item" wx:for="{{newItem}}" wx:key="id">
+        <image mode="widthFix" src="{{item.listPicUrl}}" />
+        <view class="name">
+          <text>{{item.name}}</text>
+        </view>
+        <view class="price">
+          <text>￥{{item.retailPrice}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

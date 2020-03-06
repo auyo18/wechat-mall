@@ -34,7 +34,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 50rpx;
-  background: #f4f4f4;
+  background: #f7f7f7;
   padding: 0.5%;
 }
 

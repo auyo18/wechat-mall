@@ -1,6 +1,6 @@
 // pages/home/home.js
-import api from '../../api/index.js'
-import request from '../../utils/request.js'
+import api from '../../../api/index.js'
+import request from '../../../utils/request.js'
 
 Page({
 
@@ -8,7 +8,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    banners: []
+    banners: [],
+    menus: [],
+    saleRank: [],
+    newItem: []
   },
 
   /**
@@ -67,13 +70,18 @@ Page({
 
   },
   _loadData() {
+    wx.showLoading({
+      title: '加载中',
+    })
     request({
       url: api.IndexUrl
     }).then(res => {
+      wx.hideLoading()
       this.setData({
         banners: res.banners,
         menus: res.menus,
-        saleRank: res.saleRank
+        saleRank: res.saleRank,
+        newItem: res.newItem
       })
     })
   }

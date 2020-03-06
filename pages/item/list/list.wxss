@@ -1,0 +1,14 @@
+/* pages/item/list/list.wxss */
+
+.list-wrapper {
+  padding: 20rpx 0;
+}
+
+.list-wrapper .title {
+  text-align: center;
+  line-height: 3;
+}
+
+.list-wrapper .title text {
+  font-size: 40rpx;
+}

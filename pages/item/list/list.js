@@ -1,4 +1,4 @@
-// pages/home/home.js
+// pages/item/list/list.js
 import api from '../../../api/index.js'
 import request from '../../../utils/request.js'
 
@@ -8,17 +8,16 @@ Page({
    * 页面的初始数据
    */
   data: {
+    title: '',
     banners: [],
-    menus: [],
-    saleRank: [],
-    newItem: []
+    itemList: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this._loadData()
+    this._loadData(options)
   },
 
   /**
@@ -69,23 +68,18 @@ Page({
   onShareAppMessage: function() {
 
   },
-  goItemList(e) {
-    wx.navigateTo({
-      url: '/pages/item/list/list?categoryId=' + e.currentTarget.dataset.id,
-    })
-  },
-  _loadData() {
+  _loadData(data) {
     wx.showLoading({
       title: '加载中',
     })
     request({
-      url: api.IndexUrl
+      url: api.ItemList,
+      data
     }).then(res => {
       this.setData({
+        title: res.title,
         banners: res.banners,
-        menus: res.menus,
-        saleRank: res.saleRank,
-        newItem: res.newItem
+        itemList: res.itemList
       })
       wx.hideLoading()
     })

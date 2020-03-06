@@ -1,4 +1,4 @@
-// compontents/form/form.js
+// components/form/form.js
 Component({
   /**
    * 组件的属性列表

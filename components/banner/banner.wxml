@@ -1,0 +1,8 @@
+<!--components/banner/banner.wxml-->
+<swiper class="swiper" indicator-dots="true" autoplay="true" circular="true">
+  <block wx:for="{{banners}}" wx:key="id">
+    <swiper-item class="swiper-item">
+      <image mode="aspectFill" src="{{item.picUrl}}" />
+    </swiper-item>
+  </block>
+</swiper>

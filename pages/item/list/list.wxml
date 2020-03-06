@@ -1,0 +1,10 @@
+<!--pages/item/list/list.wxml-->
+<view class="container">
+  <banner banners="{{banners}}" />
+  <view class="list-wrapper">
+    <view class="title">
+      <text>{{title}}</text>
+    </view>
+    <item-list list="{{itemList}}" />
+  </view>
+</view>

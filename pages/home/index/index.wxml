@@ -1,14 +1,8 @@
 <!--pages/home/home.wxml-->
 <view class="container">
-  <swiper class="swiper" indicator-dots="true" autoplay="true" circular="true">
-    <block wx:for="{{banners}}" wx:key="_id">
-      <swiper-item class="swiper-item">
-        <image mode="aspectFill" src="{{item}}" />
-      </swiper-item>
-    </block>
-  </swiper>
+  <banner banners="{{banners}}" />
   <view class="module menus">
-    <view class="item" wx:for="{{menus}}" wx:key="name">
+    <view class="item" wx:for="{{menus}}" wx:key="name" bindtap="goItemList" data-id="{{item.id}}">
       <image src="{{item.icon}}" />
       <text>{{item.name}}</text>
     </view>
@@ -23,17 +17,7 @@
     </view>
   </view>
   <view class="module">
-    <text class="title">新品首发</text>
-    <view class="new-item">
-      <view class="item" wx:for="{{newItem}}" wx:key="id">
-        <image mode="widthFix" src="{{item.listPicUrl}}" />
-        <view class="name">
-          <text>{{item.name}}</text>
-        </view>
-        <view class="price">
-          <text>￥{{item.retailPrice}}</text>
-        </view>
-      </view>
-    </view>
+    <text class="title">为你推荐</text>
+    <item-list list="{{newItem}}" />
   </view>
 </view>

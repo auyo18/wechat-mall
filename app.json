@@ -6,7 +6,8 @@
     "pages/auth/account-login/account-login",
     "pages/auth/register/register",
     "pages/auth/reset/reset",
-    "pages/user/order/order"
+    "pages/user/order/order",
+    "pages/item/list/list"
   ],
   "window": {
     "backgroundTextStyle": "light",

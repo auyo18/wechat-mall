@@ -1,0 +1,27 @@
+/* components/item-list/item-list.wxss */
+
+.new-item {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 15rpx;
+  min-height: 300rpx;
+}
+
+.new-item .item {
+  width: 50%;
+  padding: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.new-item .item image {
+  width: 100%;
+  border-radius: 5rpx;
+}
+
+.new-item .item .name {
+  margin: 10rpx 0;
+}
+
+.price text {
+  color: #dd1a21;
+}

@@ -16,6 +16,7 @@
 .new-item .item image {
   width: 100%;
   border-radius: 5rpx;
+  background-color: #f4f4f4;
 }
 
 .new-item .item .name {

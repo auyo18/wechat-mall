@@ -1,0 +1,155 @@
+/* pages/cart/index/index.wxss */
+
+.cart-login {
+  margin-top: 300rpx;
+}
+
+.cart-login .desc {
+  display: flex;
+  margin-bottom: 40rpx;
+  justify-content: center;
+}
+
+.cart-login .desc text {
+  margin-left: 10rpx;
+}
+
+.cart-empty {
+  text-align: center;
+  margin-top: 300rpx;
+}
+
+.cart-empty text {
+  color: #999;
+}
+
+.cart-list {
+  background-color: #f7f7f7;
+  overflow: hidden;
+  padding-bottom: 100rpx;
+}
+
+.cart-list .item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 40rpx 20rpx 40rpx 0;
+  background-color: white;
+  margin: 20rpx 0;
+  left:0;
+  transition: left .5s;
+}
+
+.cart-list .item .text {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1;
+}
+
+.cart-list .item .text .title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-inline-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.cart-list .item .text .specification {
+  margin: 15rpx 0;
+  color: #777;
+}
+
+.cart-list .item .text .price {
+  color: #dd1a21;
+}
+
+.cart-list .item .text .count {
+  display: flex;
+  margin-top: 20rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.cart-list .item .text .count text {
+  background-color: #f7f7f7;
+  padding: 0 15rpx;
+  margin-right: 10rpx;
+}
+
+.cart-list .item .text .count .num {
+  text-align: center;
+  width: 80rpx;
+}
+
+.cart-list .select {
+  padding: 20rpx;
+}
+
+.cart-list .select-no {
+  width: 35rpx;
+  height: 35rpx;
+  margin: 4rpx;
+  border-radius: 35rpx;
+  border: 1px solid #ccc;
+}
+
+.cart-list .item .pic {
+  width: 150rpx;
+  margin-right: 20rpx;
+}
+
+.cart-list .item .delete {
+  position: absolute;
+  top: 0;
+  right: -150rpx;
+  background-color: #f03;
+  color: white;
+  width: 150rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-toolbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  border-top: 1px solid #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-toolbar .left {
+  display: flex;
+  align-items: center;
+}
+
+.cart-toolbar .select {
+  padding: 20rpx;
+}
+
+.cart-toolbar .right {
+  display: flex;
+  align-items: center;
+}
+
+.cart-toolbar .right .price {
+  margin: 0 20rpx;
+  font-size: 40rpx;
+  color: #dd1a21;
+}
+
+.cart-toolbar .right .button {
+  display: block;
+  background-color: #dd1a21;
+  color: white;
+  width: 200rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}

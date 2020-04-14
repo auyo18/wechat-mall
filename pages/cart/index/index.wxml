@@ -1,0 +1,48 @@
+<!--pages/cart/index/index.wxml-->
+<view class="container">
+  <view wx:if="{{!hasLogin}}" class="cart-login">
+    <view class="desc">
+      <icon type="warn" color="#F76260" />
+      <text>未登录</text>
+    </view>
+    <button type="primary" bindtap="goLogin">登录</button>
+  </view>
+  <view wx:elif="{{!list.length}}" class="cart-empty">
+    <text>购物车为空</text>
+  </view>
+  <view wx:else class="cart-list">
+    <view wx:for="{{list}}" wx:key="id" class="item">
+      <view class="select" data-id="{{item.id}}" data-specification="{{item.specification}}" bindtap="handleSelect">
+        <icon wx:if="{{item.selected}}" type="success" color="#dd1a21" />
+        <view wx:else class="select-no" />
+      </view>
+      <image mode="widthFix" src="{{item.pic}}" class="pic" />
+      <view class="text">
+        <text class="title">{{item.title}}</text>
+        <text class="specification">{{item.specification}}</text>
+        <text class="price">￥{{item.price}}</text>
+        <view class="count">
+          <text style="{{item.count<2?'background-color:#fefefe;color:#ccc':''}}" data-id="{{item.id}}" data-count="{{item.count}}" data-specification="{{item.specification}}" bindtap="subtractCount">-</text>
+          <text class="num">{{item.count}}</text>
+          <text data-id="{{item.id}}" data-count="{{item.count}}" data-specification="{{item.specification}}" bindtap="addCount">+</text>
+        </view>
+      </view>
+      <view class="delete">
+        删除
+      </view>
+    </view>
+    <view class="cart-toolbar">
+      <view class="left" bindtap="handleSelectAll">
+        <view class="select">
+          <icon wx:if="{{isSelectedAll}}" type="success" color="#dd1a21" />
+          <view wx:else class="select-no" />
+        </view>
+        <text>全选</text>
+      </view>
+      <view class="right">
+        <text class="price">￥{{totalPrice}}</text>
+        <text class="button">下单</text>
+      </view>
+    </view>
+  </view>
+</view>

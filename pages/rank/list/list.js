@@ -1,9 +1,6 @@
-// pages/home/home.js
+// pages/rank/list/list.js
 import api from '../../../api/index.js'
 import request from '../../../utils/request.js'
-import {
-  checkFullSucreen
-} from '../../../utils/util.js'
 
 Page({
 
@@ -11,10 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    banners: [],
-    menus: [],
-    saleRank: [],
-    newItem: []
+    list: []
   },
 
   /**
@@ -35,11 +29,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    wx.login({
-      success: (res) => {
-        console.log(res)
-      }
-    })
+
   },
 
   /**
@@ -76,35 +66,22 @@ Page({
   onShareAppMessage: function() {
 
   },
-  goItemList(e) {
-    wx.navigateTo({
-      url: '/pages/item/list/list?categoryId=' + e.currentTarget.dataset.id,
+  _loadData(data) {
+    wx.showLoading({
+      title: '加载中',
     })
-  },
-  goRankList(e) {
-    wx.navigateTo({
-      url: '/pages/rank/list/list'
-    })
-  },
-  _loadData() {
-    // wx.showLoading({
-    //   title: '加载中',
-    // })
     request({
-      url: api.IndexUrl
+      url: api.RankList
     }).then(res => {
       this.setData({
-        banners: res.banners,
-        menus: res.menus,
-        saleRank: res.saleRank,
-        newItem: res.newItem
+        list: res.data
       })
       wx.hideLoading()
-    }).catch((e) => {
-      wx.showLoading({
-        title: e.message,
-      })
-      // wx.hideLoading()
+    })
+  },
+  goRankDetail(e) {
+    wx.navigateTo({
+      url: '/pages/rank/detail/detail?detail=' + JSON.stringify(e.currentTarget.dataset.detail)
     })
   }
 })

@@ -1,0 +1,106 @@
+/* pages/rank/list/list.wxss */
+
+.rank-list {
+  padding: 0 20rpx;
+}
+
+.rank-list .item-wrapper {
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.rank-list .item {
+  display: flex;
+}
+
+.rank-list .item .pic {
+  position: relative;
+  width: 40%;
+  margin-right: 20rpx;
+}
+
+.rank-list .item .pic .pic-image {
+  background-color: #f4f4f4;
+}
+
+.rank-list .item .pic .count-image {
+  position: absolute;
+  top: -10rpx;
+  left: 10rpx;
+  width: 51rpx;
+  height: 51rpx;
+}
+
+.rank-list .item .pic .count {
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: lightgrey;
+  color: white;
+  text-align: center;
+  border-radius: 100rpx;
+}
+
+.rank-list .item .text {
+  width: 60%;
+  position: relative;
+}
+
+.rank-list .item .text .name {
+  padding: 10rpx 0;
+}
+
+.rank-list .item .text .name text {
+  font-size: 36rpx;
+}
+
+.rank-list .item .text .bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rank-list .item .text .bottom .price {
+  font-size: 36rpx;
+  color: #dd1a21;
+}
+
+.rank-list .item .text .bottom .button {
+  background-image: linear-gradient(90deg, #f55 0, #ce2424 100%);
+  color: white;
+  padding: 10rpx 30rpx;
+  border-radius: 50rpx;
+}
+
+.rank-list .item-wrapper .comment {
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+  border-radius: 100rpx;
+  padding: 15rpx;
+  margin-top: 20rpx;
+}
+
+.rank-list .item-wrapper .comment .avatar {
+  width: 50rpx;
+  margin-right: 20rpx;
+}
+
+.rank-list .item-wrapper .comment .avatar image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.rank-list .item-wrapper .comment .content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-inline-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}

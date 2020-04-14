@@ -10,7 +10,7 @@
   <view class="module sale-rank-wrapper">
     <text class="title">类目热销榜</text>
     <view class="sale-rank">
-      <view class="item" wx:for="{{saleRank}}" wx:key="name">
+      <view class="item" wx:for="{{saleRank}}" wx:key="name" bindtap="goRankList">
         <text class="name">{{item.name}}</text>
         <image src="{{item.icon}}" />
       </view>
@@ -19,5 +19,8 @@
   <view class="module">
     <text class="title">为你推荐</text>
     <item-list list="{{newItem}}" />
+  </view>
+  <view class="copyright">
+    <text class="title">聚力创意 © julipay.com</text>
   </view>
 </view>

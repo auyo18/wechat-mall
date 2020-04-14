@@ -4,8 +4,6 @@
   background-color: #f7f7f7;
 }
 
-
-
 .menus {
   display: flex;
   flex-wrap: wrap;

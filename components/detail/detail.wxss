@@ -1,0 +1,269 @@
+/* components/detail/detail.wxss */
+
+.detail-pic {
+  position: relative;
+}
+
+.detail-pic .swiper {
+  height: 750rpx;
+}
+
+.detail-pic image {
+  width: 100%;
+  background-color: #f4f4f4;
+}
+
+.detail-pic .pagination {
+  position: absolute;
+  bottom: 30rpx;
+  right: 30rpx;
+  background-color: white;
+  border-radius: 5rpx;
+  width: 70rpx;
+  font-size: 24rpx;
+  text-align: center;
+  z-index: 2;
+}
+
+.detail-wrapper {
+  padding-bottom: 200rpx;
+}
+
+.detail-wrapper .detail-section {
+  padding: 30rpx 20rpx;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.detail-wrapper .detail-section .left {
+  margin-right: 20rpx;
+  color: #999;
+}
+
+.detail-wrapper .detail-section .right {
+  flex: 1;
+}
+
+.detail-wrapper .base-info .price {
+  font-size: 40rpx;
+  color: #dd1a21;
+}
+
+.detail-wrapper .base-info .title {
+  font-size: 36rpx;
+}
+
+.detail-wrapper .specification {
+  display: flex;
+  align-items: center;
+}
+
+.specification-select {
+  position: relative;
+}
+
+.content-wrapper {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 20rpx;
+  background-color: white;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+  z-index: 1000;
+}
+
+.content-wrapper.show {
+  transform: translateY(0);
+}
+
+.content-wrapper .base-info {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 40rpx;
+  position: relative;
+}
+
+.content-wrapper .base-info image {
+  width: 150rpx;
+  margin-right: 20rpx;
+}
+
+.content-wrapper .base-info .price {
+  color: #dd1a21;
+}
+
+.content-wrapper .base-info .close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10rpx;
+}
+
+.content-wrapper .specification-box {
+  margin-bottom: 40rpx;
+}
+
+.content-wrapper .specification-box .specification text {
+  display: inline-block;
+  background-color: #f4f4f4;
+  padding: 10rpx 30rpx;
+  margin: 20rpx 20rpx 0 0;
+  border-radius: 50rpx;
+  font-size: 24rpx;
+}
+
+.content-wrapper .specification-box .specification .select {
+  color: white;
+  background-color: #dd1a21;
+}
+
+.content-wrapper .count-box {
+  margin-bottom: 40rpx;
+}
+
+.content-wrapper .count-box .count {
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.content-wrapper .count-box .count text {
+  background-color: #f7f7f7;
+  padding: 10rpx 30rpx;
+  margin-right: 10rpx;
+}
+
+.content-wrapper .count-box .count .num {
+  text-align: center;
+  width: 100rpx;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.5s;
+  z-index: 999;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.detail-wrapper .discount {
+  display: flex;
+  align-items: center;
+}
+
+.detail-wrapper .discount .right text {
+  font-size: 24rpx;
+  background-color: #dd1a21;
+  color: white;
+  padding: 5rpx 10rpx;
+  margin: 0 5rpx;
+}
+
+.detail-wrapper .service {
+  display: flex;
+}
+
+.detail-wrapper .service .right .item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.detail-wrapper .service .right .item icon {
+  margin-right: 5rpx;
+}
+
+.detail-wrapper .content image {
+  display: block;
+}
+
+.detail-wrapper .bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #f7f7f7;
+}
+
+.detail-wrapper .bottom .nav {
+  display: flex;
+  justify-content: space-around;
+  width: 35%;
+}
+
+.detail-wrapper .bottom .nav .item {
+  text-align: center;
+  line-height: 1;
+}
+
+.detail-wrapper .bottom .nav .item image {
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.detail-wrapper .bottom .nav .item text {
+  font-size: 22rpx;
+  color: #777;
+}
+
+.detail-wrapper .bottom .nav .cart {
+  position: relative;
+}
+
+.detail-wrapper .bottom .nav .cart .total {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  background-color: #dd1a21;
+  color: white;
+  padding: 0 7rpx;
+  min-width: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  border-radius: 50rpx;
+}
+
+.detail-wrapper .button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.detail-wrapper .button-wrapper .button {
+  border-radius: 100rpx;
+  color: white;
+  width: 48%;
+  text-align: center;
+  padding: 10rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.detail-wrapper .button-wrapper .add-cart {
+  background-color: #cc9756;
+}
+
+.detail-wrapper .button-wrapper .buy {
+  background-color: #dd1a21;
+}
+
+.detail-wrapper .content image {
+  width: 100%;
+}

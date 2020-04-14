@@ -81,8 +81,15 @@ Page({
         userInfo: userInfo,
         hasLogin: true
       })
+    } else {
+      this.setData({
+        userInfo: {
+          nickname: '点击登录',
+          avatar: '/static/images/avatar.png'
+        },
+        hasLogin: false
+      })
     }
-    console.log(this.data.userInfo)
   },
 
   /**
@@ -149,7 +156,7 @@ Page({
         removeToken()
         removeUserInfo()
         wx.reLaunch({
-          url: '/pages/home/home'
+          url: '/pages/home/index/index'
         });
       }
     })

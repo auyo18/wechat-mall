@@ -1,7 +1,7 @@
 <!--components/item-list/item-list.wxml-->
 <view class="new-item">
-  <view class="item" wx:for="{{list}}" wx:key="id">
-    <image mode="widthFix" src="{{item.listPicUrl}}" />
+  <view class="item" wx:for="{{list}}" wx:key="id" bindtap="goItemDetail" data-detail="{{item}}">
+    <image lazy-load="true" mode="widthFix" src="{{item.listPicUrl}}" />
     <view class="name">
       <text>{{item.name}}</text>
     </view>

@@ -1,0 +1,44 @@
+<!--pages/rank/list/list.wxml-->
+<view class="container">
+  <view class="module rank-list">
+    <view class="item-wrapper" wx:for="{{list}}" wx:key="id" bindtap="goRankDetail" data-detail="{{item}}">
+      <view class="item">
+        <view class="pic">
+          <image class="pic-image" lazy-load="true" mode="widthFix" src="{{item.listPicUrl}}" />
+          <view wx:if="{{index === 0}}">
+            <image class="count-image" src="https://yanxuan.nosdn.127.net/03c8241725ddbf3e629d716d86dad5b5.png" />
+          </view>
+          <view wx:elif="{{index === 1}}">
+            <image class="count-image" src="https://yanxuan.nosdn.127.net/894d942c2daed628a54597efb2561bc7.png" />
+          </view>
+          <view wx:elif="{{index === 2}}">
+            <image class="count-image" src="https://yanxuan.nosdn.127.net/975e06a0f6aaa72a7423a32c1049555a.png" />
+          </view>
+          <view wx:else>
+            <text class="count">{{index+1}}</text>
+          </view>
+        </view>
+        <view class="text">
+          <view class="name">
+            <text>{{item.name}}</text>
+          </view>
+          <view>
+            <text>{{item.praise}}好评率</text>
+          </view>
+          <view class="bottom">
+            <text class="price">￥{{item.retailPrice}}</text>
+            <text class="button">马上抢</text>
+          </view>
+        </view>
+      </view>
+      <view class="comment">
+        <view class="avatar">
+          <image src="{{item.comment.avatar}}" />
+        </view>
+        <view class="content">
+          <text>{{item.comment.content}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

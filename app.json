@@ -8,9 +8,8 @@
     "pages/auth/register/register",
     "pages/auth/reset/reset",
     "pages/item/list/list",
-    "pages/item/detail/detail",
+    "pages/detail/detail",
     "pages/rank/list/list",
-    "pages/rank/detail/detail",
     "pages/cart/index/index"
   ],
   "window": {

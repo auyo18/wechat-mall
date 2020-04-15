@@ -79,9 +79,9 @@ Page({
       wx.hideLoading()
     })
   },
-  goRankDetail(e) {
+  goDetail(e) {
     wx.navigateTo({
-      url: '/pages/rank/detail/detail?detail=' + JSON.stringify(e.currentTarget.dataset.detail)
+      url: '/pages/detail/detail?detail=' + JSON.stringify(e.currentTarget.dataset.detail)
     })
   }
 })

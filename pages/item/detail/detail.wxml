@@ -1,4 +1,0 @@
-<!--pages/item/detail/detail.wxml-->
-<view class="container">
-  <detail _id="{{id}}" title="{{title}}" pics="{{pics}}" price="{{price}}" hasLogin="{{hasLogin}}" cartTotal="{{cartTotal}}" />
-</view>

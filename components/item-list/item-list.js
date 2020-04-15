@@ -21,9 +21,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    goItemDetail(e) {
+    goDetail(e) {
       wx.navigateTo({
-        url: '/pages/item/detail/detail?detail=' + JSON.stringify(e.currentTarget.dataset.detail)
+        url: '/pages/detail/detail?detail=' + JSON.stringify(e.currentTarget.dataset.detail)
       })
     }
   }

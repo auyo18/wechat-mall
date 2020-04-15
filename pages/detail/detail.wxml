@@ -1,0 +1,125 @@
+<!--pages/rank/detail/detail.wxml-->
+<view class="container">
+  <view class="detail-wrapper">
+    <view class="detail-pic">
+      <swiper class="swiper" circular="true" bindchange="changeCurrentIndex">
+        <block wx:for="{{pics}}" wx:key="index">
+          <swiper-item class="swiper-item">
+            <image mode="widthFix" src="{{item}}" bindtap="previewImage" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="pagination">
+        {{currentIndex}} / {{pics.length}}
+      </view>
+    </view>
+    <view class="base-info detail-section">
+      <view>
+        <text class="price">￥{{price}}</text>
+      </view>
+      <view>
+        <text class="title">{{title}}</text>
+      </view>
+    </view>
+    <view class="specification detail-section">
+      <text class="left">规格</text>
+      <view class="right" bindtap="showSpecification">
+        <text>{{specification[specificationIndex]||'请选择'}}</text>
+      </view>
+    </view>
+    <view class="specification-select">
+      <view wx:if="{{specificationState}}" class="mask" catchtouchmove="touchmoveHandler" bindtap="hideSpecification" />
+      <view class="content-wrapper{{specificationState?' show':''}}" catchtouchmove="touchmoveHandler" style="{{isFullSucreen?'padding-bottom:80rpx':''}}">
+        <view class="base-info">
+          <image mode="widthFix" src="{{pics[0]}}" />
+          <view class="text">
+            <view>
+              价格：
+              <text class="price">￥{{price}}</text>
+            </view>
+            <view>
+              <text>{{specificationIndex>-1?'已选择：'+specification[specificationIndex]:'请选择规格'}}</text>
+            </view>
+            <icon class="close" type="clear" size="20" bindtap="hideSpecification" />
+          </view>
+        </view>
+        <view class="specification-box">
+          <view>
+            <text>尺码</text>
+          </view>
+          <view class="specification">
+            <text class="{{specificationIndex===index?'select':''}}" wx:for="{{specification}}" wx:key="item" data-index="{{index}}" bindtap="selectSpecification">{{item}}</text>
+          </view>
+        </view>
+        <view class="count-box">
+          <view>
+            <text>数量</text>
+          </view>
+          <view class="count">
+            <text style="{{count<2?'background-color:#fefefe;color:#ccc':''}}" bindtap="subtractCount">-</text>
+            <text class="num">{{count}}</text>
+            <text bindtap="addCount">+</text>
+          </view>
+        </view>
+        <view class="button-wrapper">
+          <text class="add-cart button" bindtap="addCart">加入购物车</text>
+          <text class="buy button">立即购买</text>
+        </view>
+      </view>
+    </view>
+    <view class="discount detail-section">
+      <text class="left">优惠</text>
+      <view class="right">
+        <text>满150减25</text>
+        <text>满199减50</text>
+      </view>
+    </view>
+    <view class="service detail-section">
+      <text class="left">服务</text>
+      <view class="right">
+        <view class="item">
+          <icon type="success" size="20" color="red" />
+          <text>99元免基础运费(20KG内)</text>
+        </view>
+        <view class="item">
+          <icon type="success" size="20" color="red" />
+          <text>7天无理由退货</text>
+        </view>
+        <view class="item">
+          <icon type="success" size="20" color="red" />
+          <text>可配送港澳台</text>
+        </view>
+      </view>
+    </view>
+    <view class="content detail-section">
+      <image mode="widthFix" src="https://yanxuan-item.nosdn.127.net/66bae1dcfa752c242e35c44a30e56456.jpg" />
+      <image mode="widthFix" src="https://yanxuan-item.nosdn.127.net/41fd5084fe610091675f55e9a7cafefa.jpg" />
+      <image mode="widthFix" src="https://yanxuan-item.nosdn.127.net/abc42d93f39bea21557cd50471cf3ffe.jpg" />
+      <image mode="widthFix" src="https://yanxuan-item.nosdn.127.net/2b452ea347afd8be1bc8a51e9cec36d3.jpg" />
+      <image mode="widthFix" src="https://yanxuan-item.nosdn.127.net/836d374584c8cfdd75a0644f303f2a8f.jpg" />
+      <image mode="widthFix" src="https://yanxuan-item.nosdn.127.net/252cf6dcb5ffdaddaa889c730bbcc15d.jpg" />
+      <image mode="widthFix" src="https://yanxuan-item.nosdn.127.net/cb74da8970cca711cae909c57e88fe11.jpg" />
+    </view>
+    <view class="bottom" style="{{isFullSucreen?'padding-bottom:60rpx':''}}">
+      <view class="nav">
+        <view class="item" bindtap="goHome">
+          <image src="../../static/images/home.png" />
+          <view>
+            <text>首页</text>
+          </view>
+        </view>
+        <view class="item cart" bindtap="goCart">
+          <image src="../../static/images/cart.png" />
+          <view>
+            <text>购物车</text>
+          </view>
+          <text class="total" wx:if="{{cartTotal>0}}">{{cartTotal}}</text>
+        </view>
+      </view>
+      <view class="button-wrapper">
+        <text class="add-cart button" bindtap="showSpecification">加入购物车</text>
+        <text class="buy button" bindtap="showSpecification">立即购买</text>
+      </view>
+    </view>
+  </view>
+</view>

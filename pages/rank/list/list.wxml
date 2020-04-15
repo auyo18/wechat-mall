@@ -1,10 +1,10 @@
 <!--pages/rank/list/list.wxml-->
 <view class="container">
   <view class="module rank-list">
-    <view class="item-wrapper" wx:for="{{list}}" wx:key="id" bindtap="goRankDetail" data-detail="{{item}}">
+    <view class="item-wrapper" wx:for="{{list}}" wx:key="id" bindtap="goDetail" data-detail="{{item}}">
       <view class="item">
         <view class="pic">
-          <image class="pic-image" lazy-load="true" mode="widthFix" src="{{item.listPicUrl}}" />
+          <image class="pic-image" lazy-load="true" mode="widthFix" src="{{item.pic}}" />
           <view wx:if="{{index === 0}}">
             <image class="count-image" src="https://yanxuan.nosdn.127.net/03c8241725ddbf3e629d716d86dad5b5.png" />
           </view>
@@ -26,7 +26,7 @@
             <text>{{item.praise}}好评率</text>
           </view>
           <view class="bottom">
-            <text class="price">￥{{item.retailPrice}}</text>
+            <text class="price">￥{{item.price}}</text>
             <text class="button">马上抢</text>
           </view>
         </view>

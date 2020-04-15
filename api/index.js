@@ -11,7 +11,8 @@ export default {
   CartSelect: ApiRootUrl + '/cart/select', // 购物车选择商品
   CartSelectAll: ApiRootUrl + '/cart/selectAll', // 购物车全选/全反选商品
   CartChangeCount: ApiRootUrl + '/cart/changeCount', // 购物车商品更改数量
-  Cartadd: ApiRootUrl + '/cart/add', // 商品加入购物车
+  CartAdd: ApiRootUrl + '/cart/add', // 商品加入购物车
+  CartRemove: ApiRootUrl + '/cart/remove', // 购物车删除商品
 
   AuthLoginByWeixin: ApiRootUrl + '/auth/loginByWeiXin', // 微信登录
   AuthLoginByWeixinMobile: ApiRootUrl + '/auth/loginByWeXinMobile', // 微信手机号登录

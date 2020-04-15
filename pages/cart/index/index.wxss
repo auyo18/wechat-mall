@@ -36,8 +36,12 @@
   padding: 40rpx 20rpx 40rpx 0;
   background-color: white;
   margin: 20rpx 0;
-  left:0;
-  transition: left .5s;
+  left: 0;
+  transition: left 0.3s;
+}
+
+.cart-list .item.cur {
+  left: -150rpx;
 }
 
 .cart-list .item .text {

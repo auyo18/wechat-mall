@@ -15,7 +15,10 @@ Page({
     hasLogin: false,
     list: [],
     totalPrice: 0,
-    isSelectedAll: false
+    isSelectedAll: false,
+    curItemIndex: -1,
+    startX: null,
+    startY: null
   },
 
   /**
@@ -36,23 +39,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    if (app.globalData.hasLogin) {
-      this.setData({
-        hasLogin: true
-      })
-      this._loadData()
-    } else {
-      this.setData({
-        hasLogin: false
-      })
-    }
+    this._loadData()
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-
+    this.setData({
+      curItemIndex: -1
+    })
   },
 
   /**
@@ -83,17 +79,30 @@ Page({
 
   },
   _loadData() {
-    request({
-      url: api.CartList
-    }).then(res => {
-      const list = res.data
+    if (app.globalData.hasLogin) {
       this.setData({
-        list
+        hasLogin: true,
       })
-      this.calculatePriceAndInspectSelected()
-    })
+      request({
+        url: api.CartList
+      }).then(res => {
+        const list = res.data
+        this.setData({
+          list
+        })
+        this.calculatePriceAndInspectSelected()
+      })
+    } else {
+      this.setData({
+        hasLogin: false
+      })
+    }
   },
   goLogin() {
+    if (app.globalData.hasLogin) {
+      this._loadData()
+      return
+    }
     wx.navigateTo({
       url: '/pages/auth/login/login',
     })
@@ -151,6 +160,25 @@ Page({
       this.calculatePriceAndInspectSelected()
     })
   },
+  deleteItem() {
+    const curItem = this.data.list[this.data.curItemIndex]
+    console.log(this.data.curItemIndex)
+    request({
+      url: api.CartRemove,
+      data: {
+        id: curItem.id,
+        specification: curItem.specification
+      },
+      method: 'POST'
+    }).then(res => {
+      getTotal()
+      this.setData({
+        list: res.data,
+        curItemIndex: -1,
+      })
+      this.calculatePriceAndInspectSelected()
+    })
+  },
   calculatePriceAndInspectSelected() {
     let totalPrice = 0
     let isSelectedAll = true
@@ -169,7 +197,7 @@ Page({
   handleSelectAll() {
     request({
       url: api.CartSelectAll,
-      data:{
+      data: {
         isSelectedAll: this.data.isSelectedAll
       },
       method: 'POST'
@@ -178,6 +206,47 @@ Page({
         list: res.data
       })
       this.calculatePriceAndInspectSelected()
+    })
+  },
+  touchS(e) {
+    if (e.touches.length) {
+      this.setData({
+        startX: e.touches[0].clientX,
+        startY: e.touches[0].clientY,
+      })
+    }
+  },
+  touchM(e) {
+    const index = e.currentTarget.dataset.index
+    if (e.touches.length && this.data.startX) {
+      const differX = e.touches[0].clientX - this.data.startX
+      const differY = Math.abs(e.touches[0].clientY - this.data.startY)
+      if (index !== this.data.curItemIndex) {
+        this.setData({
+          curItemIndex: -1
+        })
+      } else {
+        if (differX > 50) {
+          this.setData({
+            curItemIndex: -1
+          })
+        }
+      }
+      if (differX < -50 && differY < 50) {
+        this.setData({
+          curItemIndex: index
+        })
+      }
+    }
+  },
+  touchE(e) {
+    this.setData({
+      startX: null
+    })
+  },
+  goDetail(e) {
+    wx.navigateTo({
+      url: '/pages/detail/detail?detail=' + JSON.stringify(e.currentTarget.dataset.detail)
     })
   }
 })

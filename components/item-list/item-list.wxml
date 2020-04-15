@@ -1,12 +1,12 @@
 <!--components/item-list/item-list.wxml-->
 <view class="new-item">
-  <view class="item" wx:for="{{list}}" wx:key="id" bindtap="goItemDetail" data-detail="{{item}}">
-    <image lazy-load="true" mode="widthFix" src="{{item.listPicUrl}}" />
+  <view class="item" wx:for="{{list}}" wx:key="id" bindtap="goDetail" data-detail="{{item}}">
+    <image lazy-load="true" mode="widthFix" src="{{item.pic}}" />
     <view class="name">
       <text>{{item.name}}</text>
     </view>
     <view class="price">
-      <text>￥{{item.retailPrice}}</text>
+      <text>￥{{item.price}}</text>
     </view>
   </view>
 </view>

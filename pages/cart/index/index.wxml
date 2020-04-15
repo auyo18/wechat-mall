@@ -11,14 +11,14 @@
     <text>购物车为空</text>
   </view>
   <view wx:else class="cart-list">
-    <view wx:for="{{list}}" wx:key="id" class="item">
+    <view wx:for="{{list}}" wx:key="id" class="item{{index===curItemIndex?' cur':''}}" data-index="{{index}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE">
       <view class="select" data-id="{{item.id}}" data-specification="{{item.specification}}" bindtap="handleSelect">
         <icon wx:if="{{item.selected}}" type="success" color="#dd1a21" />
         <view wx:else class="select-no" />
       </view>
-      <image mode="widthFix" src="{{item.pic}}" class="pic" />
+      <image mode="widthFix" src="{{item.pic}}" class="pic" data-detail="{{item}}" bindtap="goDetail" />
       <view class="text">
-        <text class="title">{{item.title}}</text>
+        <text class="title" data-detail="{{item}}" bindtap="goDetail">{{item.title}}</text>
         <text class="specification">{{item.specification}}</text>
         <text class="price">￥{{item.price}}</text>
         <view class="count">
@@ -27,7 +27,7 @@
           <text data-id="{{item.id}}" data-count="{{item.count}}" data-specification="{{item.specification}}" bindtap="addCount">+</text>
         </view>
       </view>
-      <view class="delete">
+      <view class="delete" catchtap="deleteItem">
         删除
       </view>
     </view>
